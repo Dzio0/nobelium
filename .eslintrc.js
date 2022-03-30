@@ -1,27 +1,11 @@
+/** @type {import('eslint-config-next')*/
 module.exports = {
-  env: {
-    browser: true,
-    es2021: true,
-    node: true
-  },
-  extends: ['plugin:react/recommended', 'next', 'standard'],
-  parserOptions: {
-    ecmaFeatures: {
-      jsx: true
-    },
-    ecmaVersion: 12,
-    sourceType: 'module'
-  },
-  plugins: ['react'],
-  settings: {
-    react: {
-      version: 'detect'
-    }
-  },
+  extends: ['next', 'next/core-web-vitals', 'prettier', 'plugin:tailwindcss/recommended'],
+  plugins: ['unused-imports'],
   rules: {
-    'react/prop-types': 'off'
+    '@next/next/no-img-element': 'off',
+    'tailwindcss/no-custom-classname': 'off',
+    'no-console': ['error', { allow: ['warn', 'error'] }],
+    'unused-imports/no-unused-imports': 'error',
   },
-  globals: {
-    React: true
-  }
-}
+};
